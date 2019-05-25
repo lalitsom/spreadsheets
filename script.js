@@ -69,7 +69,7 @@ function getImageData(img) {
 
 document.getElementById('table').innerHTML = table_data;
 copytoc(document.getElementById('table_contain').innerHTML)
-alert('done');
+alert('Done : Data copied to clipboard');
 }
 
 

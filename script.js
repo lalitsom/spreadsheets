@@ -80,9 +80,10 @@ function getImageData(img) {
 // document.getElementById('table').innerHTML = table_data;
 copytoc(table_data);
 alert('Done : Data copied to clipboard');
+setTimeout(reload,500);
 }
 
-
+function reload(){ location.reload();}
 
 
 function copytoc(str){

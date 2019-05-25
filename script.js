@@ -88,7 +88,6 @@ alert('Done : Data copied to clipboard');
 function copytoc(str){
   var ctb = document.getElementById("clipb");
   ctb.value = str;
-  ctb.setAttribute('readonly', '');
   ctb.select();
-  document.execCommand("copy");
+  document.execCommand("cut");
 }

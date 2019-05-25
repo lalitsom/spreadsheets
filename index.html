@@ -17,7 +17,7 @@
 
    <div class="section no-pad-bot" id="index-banner">
      <div class="container">
-       
+
        <h3 class="header center blue-text">Spreadsheets</h3>
        <input type="text" style="max-width: 1px; position:absolute; left:-999px;" name="" id="clipb"  value="">
 
@@ -34,16 +34,17 @@
                </div>
             </div>
          </div>
-
+         <span style="float:right">
+           <label for="max_size">Max Size</label>
+           <input type="number" min="0" name="max_size" id="max_size" value="128">
+         </span>
          <img id="myImage" style="border:1px; display:none;" />
 
 <div id="image_data" style="margin-top:50px; display:none;">
 
 </div>
-<span id="table_contain" style="display:none;">
-<TABLE id="table">
+<span id="table_contain" >
 
-</TABLE>
 </span>
        <br><br>
 
@@ -53,7 +54,11 @@
               </div>
 
               <ul class="collection" style="list-style-type: circle !important">
-                <li class="collection-item"> Select an image using Browse button.</li>
+                <li class="collection-item"> Select an image using Browse button.
+                  <span style="float:right">
+                    * Image will shrink down to maxsize
+                  </span>
+                </li>
                 <li class="collection-item">Wait for done message.</li>
                 <li class="collection-item">open a blank excel spreadsheet.</li>
                 <li class="collection-item">click on first cell and press ctrl+v</li>

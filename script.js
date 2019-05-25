@@ -1,6 +1,7 @@
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
 var imageData;
+max_size = 128;
 document.getElementById('myFile').onchange = function (evt) {
     var tgt = evt.target || window.event.srcElement,
         files = tgt.files;
@@ -14,6 +15,7 @@ document.getElementById('myFile').onchange = function (evt) {
 }
 
 function showImage(fileReader) {
+    max_size = document.getElementById('max_size').value;
     var img = document.getElementById("myImage");
     img.onload = () => getImageData(img);
     img.src = fileReader.result;
@@ -21,11 +23,19 @@ function showImage(fileReader) {
 
 function getImageData(img) {
   document.getElementById('image_data').innerHTML = "";
+  scale = 1;
+  if(img.width>max_size){
+    scale = max_size/img.width;
+  }
+  console.log(scale);
+  // return 0;
+    ctx.scale(scale,scale)
     ctx.drawImage(img, 0, 0);
-    window.imageData = ctx.getImageData(0, 0, img.width, img.height);
+    window.imageData = ctx.getImageData(0, 0, img.width*scale, img.height*scale);
     data = imageData.data;
-
-    table_data = "";
+    console.log(data.length)
+    // table_data = "";
+    table_data = "<TABLE>";
     //red color
     ir=0;
     ig=1;
@@ -65,10 +75,10 @@ function getImageData(img) {
     table_data += "</tr>";
 
   }
+  table_data += "</TABLE>"
 
-
-document.getElementById('table').innerHTML = table_data;
-copytoc(document.getElementById('table_contain').innerHTML)
+// document.getElementById('table').innerHTML = table_data;
+copytoc(table_data);
 alert('Done : Data copied to clipboard');
 }
 

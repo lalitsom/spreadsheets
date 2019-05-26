@@ -78,9 +78,10 @@ function getImageData(img) {
   table_data += "</TABLE>"
 
 // document.getElementById('table').innerHTML = table_data;
+document.getElementById('clipb').value = table_data;
 copytoc(table_data);
 alert('Done : Data copied to clipboard');
-setTimeout(reload,500);
+// setTimeout(reload,500);
 }
 
 function reload(){ location.reload();}
@@ -90,5 +91,10 @@ function copytoc(str){
   var ctb = document.getElementById("clipb");
   ctb.value = str;
   ctb.select();
-  document.execCommand("cut");
+  document.execCommand("copy");
+}
+
+
+function toggle(){
+
 }

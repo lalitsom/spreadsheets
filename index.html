@@ -19,7 +19,6 @@
      <div class="container">
 
        <h3 class="header center blue-text">Spreadsheets</h3>
-       <input type="text" style="max-width: 1px; position:absolute; left:-999px;" name="" id="clipb"  value="">
 
       <div class = "row center">
             <div class = "file-field input-field">
@@ -62,8 +61,20 @@
                 <li class="collection-item">Wait for done message.</li>
                 <li class="collection-item">open a blank excel spreadsheet.</li>
                 <li class="collection-item">click on first cell and press ctrl+v</li>
-                <li class="collection-item">woila!</li>
+                <li class="collection-item">woila!
+                  <span style="float:right">
+                    Didn't work :p
+                     <button type="button" name="button" onclick="toggle()" class=" btn-small waves-effect waves-light blue"> copy
+                     </button> it manually
+                  </span>
+                </li>
               </ul>
+
+              <!-- <input type="text" style="max-width: 1000px; " name="" id="clipb"  value=""> -->
+              <span id="clipb_container">
+                <label for="clipb_">Picture Data</label>
+                <textarea id="clipb" name="clipb_"  class="materialize-textarea"></textarea>
+              </span>
 
      </div>
    </div>
